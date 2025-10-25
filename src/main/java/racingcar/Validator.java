@@ -10,7 +10,7 @@ public class Validator {
     static final String ERROR_LONG_NAME = "자동차 이름이 5자를 초과하였습니다.";
 
     public static void validateInput(String input) {
-        if (input.equals("\n")) {
+        if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException(ERROR_EMPTY_INPUT);
         }
     }

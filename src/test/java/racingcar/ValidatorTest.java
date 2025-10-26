@@ -34,10 +34,6 @@ public class ValidatorTest extends NsTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
-    private void setSystemIn(String input) {
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-    }
-
     @Override
     protected void runMain() {
         Application.main(new String[]{});

@@ -4,7 +4,6 @@ import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
@@ -19,7 +18,7 @@ public class ValidatorTest extends NsTest {
         String invalidInput = "\n";
 
         //when & then
-        assertThatThrownBy(() -> Validator.validateInput(invalidInput))
+        assertThatThrownBy(() -> Validator.validateCarNamesList(invalidInput))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -30,7 +29,7 @@ public class ValidatorTest extends NsTest {
         List<String> carNameList = List.of("abcdef");
 
         //when & then
-        assertThatThrownBy(() -> Validator.validateCarNames(carNameList))
+        assertThatThrownBy(() -> Validator.validateCarNameCount(carNameList))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

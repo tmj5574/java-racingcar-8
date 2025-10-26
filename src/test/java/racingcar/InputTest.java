@@ -1,6 +1,5 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Console;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,7 +31,7 @@ public class InputTest extends NsTest {
         setSystemIn("pobi,woni,jun\n");
 
         //when
-        List<String> actualNames = Input.getInput();
+        List<String> actualNames = Input.getCarNames();
 
         //then
         List<String> expectedNames = List.of("pobi", "woni", "jun");

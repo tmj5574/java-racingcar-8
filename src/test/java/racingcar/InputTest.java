@@ -39,6 +39,19 @@ public class InputTest extends NsTest {
         assertThat(actualNames).isEqualTo(expectedNames);
     }
 
+    @Test
+    @DisplayName("5 라고 입력하면, 숫자 5를 반환한다")
+    void 횟수_입력() {
+        //given
+        setSystemIn("5\n");
+
+        //when
+        int tryCount = Input.getTryCount();
+
+        //then
+        assertThat(tryCount).isEqualTo(5);
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});

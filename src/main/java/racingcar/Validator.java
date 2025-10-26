@@ -9,23 +9,27 @@ public class Validator {
     static final String ERROR_INVALID_TRY_INPUT = "횟수를 잘못 입력하였습니다. 숫자를 입력하세요.";
 
 
-    public static void validateCarNamesList(String input) {
+    public static String validateCarNamesList(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException(ERROR_EMPTY_CAR_NAME);
         }
+        return input;
     }
 
-    public static void validateCarNameCount(List<String> carNames) {
+    public static List<String> validateCarNameCount(List<String> carNames) {
         for (String name : carNames) {
             if (name.length() > 5) {
                 throw new IllegalArgumentException(ERROR_LONG_NAME);
             }
         }
+
+        return carNames;
     }
 
-    public static void validateTryCount(String input) {
+    public static String validateTryCount(String input) {
         if (input == null || !input.matches("\\d+")) {
             throw new IllegalArgumentException(ERROR_INVALID_TRY_INPUT);
         }
+        return input;
     }
 }

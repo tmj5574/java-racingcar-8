@@ -9,8 +9,7 @@ public class Input {
         String input = Console.readLine();
         Validator.validateCarNamesList(input);
         List<String> carList = parseCar(input);
-        Validator.validateCarNameCount(carList);
-        return carList;
+        return Validator.validateCarNameCount(carList);
     }
 
     private static List<String> parseCar(String input) {
@@ -19,7 +18,6 @@ public class Input {
 
     public static int getTryCount() {
         String input = Console.readLine();
-        Validator.validateTryCount(input);
-        return Integer.parseInt(input);
+        return Integer.parseInt(Validator.validateTryCount(input));
     }
 }

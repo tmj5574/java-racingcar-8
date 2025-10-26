@@ -16,4 +16,10 @@ public class Input {
     private static List<String> parseCar(String input) {
         return List.of(input.split(","));
     }
+
+    public static int getTryCount() {
+        String input = Console.readLine();
+        Validator.validateTryCount(input);
+        return Integer.parseInt(input);
+    }
 }

@@ -6,8 +6,7 @@ import java.util.List;
 
 public class Input {
     public static List<String> getCarNames() {
-        String input = Console.readLine();
-        Validator.validateCarNamesList(input);
+        String input = Validator.validateCarNamesList(Console.readLine());
         List<String> carList = parseCar(input);
         return Validator.validateCarNameCount(carList);
     }

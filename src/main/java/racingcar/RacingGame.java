@@ -28,9 +28,7 @@ public class RacingGame {
     }
 
     private void oneRound() {
-        for(Car car : cars) {
-            shouldMove(car);
-        }
+        cars.forEach(this::shouldMove);
         System.out.println();
     }
 
@@ -49,19 +47,16 @@ public class RacingGame {
         int maxPosition = findMaxPosition();
         List<String> winners = new ArrayList<>();
 
-        for (Car car : cars) {
-            car.addNameIfWinner(maxPosition, winners);
-        }
+        cars.forEach(car -> car.addNameIfWinner(maxPosition, winners));
 
         return winners;
     }
 
     private int findMaxPosition() {
-        int maxPosition = 0;
-        for (Car car : cars) {
-            maxPosition = car.getUpdatedMaxPosition(maxPosition);
-        }
-        return maxPosition;
+        return cars.stream()
+            .reduce(0,
+                (currentMax, car) -> car.getUpdatedMaxPosition(currentMax),
+                    Integer::max);
     }
 
 }

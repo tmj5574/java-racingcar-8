@@ -12,15 +12,10 @@ public class Car {
 
     public void move() {
         position++;
-        printResult();
     }
 
-    public void stop() {
-        printResult();
-    }
-
-    private void printResult() {
-        System.out.println(name + " : " + "-".repeat(position));
+    public String getResult() {
+        return String.join(name, " : ") + "-".repeat(position);
     }
 
     public int getUpdatedMaxPosition(int currentMax) {

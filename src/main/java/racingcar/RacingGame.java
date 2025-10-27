@@ -24,7 +24,6 @@ public class RacingGame {
             gameCount++;
             oneRound();
         }
-        printWinners(getWinnerNames());
     }
 
     private void oneRound() {
@@ -38,17 +37,11 @@ public class RacingGame {
         if (getRandomNumber() >= 4) {
             car.move();
         }
-        else {
-            car.stop();
-        }
+        car.getResult();
     }
 
     private int getRandomNumber() {
         return Randoms.pickNumberInRange(0, 9);
-    }
-
-    private void printWinners(List<String> winnerNames) {
-        System.out.print("최종 우승자 : " + String.join(", ", winnerNames));
     }
 
     private List<String> getWinnerNames() {

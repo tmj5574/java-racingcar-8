@@ -15,7 +15,7 @@ public class Car {
     }
 
     public String getResult() {
-        return String.join(name, " : ") + "-".repeat(position);
+        return name + " : " + "-".repeat(position);
     }
 
     public int getUpdatedMaxPosition(int currentMax) {

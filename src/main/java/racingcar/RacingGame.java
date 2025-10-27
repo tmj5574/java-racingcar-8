@@ -20,10 +20,11 @@ public class RacingGame {
     public void totalRound() {
         System.out.println("실행결과");
         int gameCount = 0;
-        while (totalCount - gameCount >= 0) {
+        while (totalCount - gameCount > 0) {
             gameCount++;
             oneRound();
         }
+        Output.printWinners(getWinnerNames());
     }
 
     private void oneRound() {
@@ -37,7 +38,7 @@ public class RacingGame {
         if (getRandomNumber() >= 4) {
             car.move();
         }
-        car.getResult();
+        Output.printOneRoundResult(car);
     }
 
     private int getRandomNumber() {
@@ -52,7 +53,7 @@ public class RacingGame {
             car.addNameIfWinner(maxPosition, winners);
         }
 
-        return winners; // 4. 명단 반환
+        return winners;
     }
 
     private int findMaxPosition() {
